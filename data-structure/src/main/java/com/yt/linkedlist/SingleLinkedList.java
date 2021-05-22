@@ -24,13 +24,17 @@ public class SingleLinkedList<E> {
     /**
      * 链表的节点
      */
-    private static class Node<E> {
+    public static class Node<E> {
         private Node<E> next;
         private E item;
 
         public Node(Node<E> next, E item) {
             this.next = next;
             this.item = item;
+        }
+
+        public Node<E> getNext() {
+            return next;
         }
 
         @Override
@@ -59,9 +63,10 @@ public class SingleLinkedList<E> {
     public void addLast(E e) {
         Node<E> nextNode = new Node<>(null, e);
         if (first != null) {
-            for (Node<E> x = first.next; x != null; x = x.next) {
-                x.next = nextNode;
+            Node<E> x = first;
+            for (; x.next != null; x = x.next) {
             }
+            x.next = nextNode;
         } else {
             first = nextNode;
         }
@@ -140,6 +145,10 @@ public class SingleLinkedList<E> {
         }
     }
 
+    public Node<E> getFirst() {
+        return first;
+    }
+
     /**
      * 遍历链表
      */
@@ -152,5 +161,23 @@ public class SingleLinkedList<E> {
             System.out.println(temp.item);
             temp = temp.next;
         }
+    }
+
+    /**
+     * 返回反转列表
+     *
+     * @return
+     */
+    public SingleLinkedList<E> reverseList() {
+        SingleLinkedList<E> reverseList = new SingleLinkedList<>();
+        Node<E> temp = this.first;
+        while (true) {
+            if (temp == null) {
+                break;
+            }
+            reverseList.addFirst(temp.item);
+            temp = temp.next;
+        }
+        return reverseList;
     }
 }
