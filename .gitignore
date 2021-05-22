@@ -1,0 +1,24 @@
+HELP.md
+target
+*.class
+.settings
+.classpath
+.project
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### FOR IDEA 
+.idea
+*.iws
+*.iml
+*.ipr
+.mvn
+mvnw*
+target
+
+
+catalina.home_IS_UNDEFINED
+*.war
+
+logs/
