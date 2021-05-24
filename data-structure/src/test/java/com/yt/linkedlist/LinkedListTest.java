@@ -81,4 +81,18 @@ public class LinkedListTest {
         System.out.println("删除后");
         list.list();
     }
+
+    @Test
+    public void testJoseph() {
+        JosephCircleSingleLinkedList josephCircleSingleLinkedList = new JosephCircleSingleLinkedList();
+        int num = 10;
+        for (int i = 0; i < num; i++) {
+            josephCircleSingleLinkedList.addLast(i);
+        }
+        josephCircleSingleLinkedList.list();
+
+        //约瑟夫问题
+        System.out.println("测试约瑟夫问题：");
+        josephCircleSingleLinkedList.joseph(3, 6);
+    }
 }
