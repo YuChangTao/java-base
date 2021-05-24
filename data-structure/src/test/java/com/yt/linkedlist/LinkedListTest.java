@@ -9,18 +9,24 @@ public class LinkedListTest {
 
     SingleLinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
 
-    @Before
-    public void testAdd() {
+    /**
+     * 单向链表添加
+     */
+//    @Before
+    public void testSingleLinkedListAdd() {
         singleLinkedList.addLast(3);
         singleLinkedList.addLast(4);
         singleLinkedList.addFirst(1);
-        singleLinkedList.addBefore(1, 2);
+        singleLinkedList.addAfter(1, 2);
         System.out.println("单链表原始数据~~");
         singleLinkedList.list();
     }
 
+    /**
+     * 单向链表删除
+     */
     @Test
-    public void testRemove() {
+    public void testSingleLinkedListRemove() {
         singleLinkedList.remove(1);
         System.out.println("删除后~~");
         singleLinkedList.list();
@@ -34,7 +40,7 @@ public class LinkedListTest {
      * 2.可以利用栈这个数据结构，将各个节点压入到栈中，然后利用栈的先进后出的特点，就实现了逆序打印的效果
      */
     @Test
-    public void reverseList() {
+    public void reverseSingleLinkedList() {
         //方式一：
         System.out.println("单链表反转输出列表~~");
         SingleLinkedList<Integer> reverseList = singleLinkedList.reverseList();
@@ -56,5 +62,23 @@ public class LinkedListTest {
         while (stack.size() > 0) {
             System.out.println(stack.pop()); //stack的特点是先进后出
         }
+    }
+
+
+    /**
+     * 测试双向链表
+     */
+    @Test
+    public void testDoubleLinkedList() {
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        list.addFirst(1);
+        list.addFirst(2);
+        list.addLast(3);
+        list.addBefore(3, 4);
+        list.list();
+
+        list.remove(3);
+        System.out.println("删除后");
+        list.list();
     }
 }

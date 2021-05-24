@@ -4,7 +4,6 @@ package com.yt.linkedlist;
 /**
  * 自定义单向链表，单向链表的基本思路：从头节点向下遍历
  * <p>
- * jdk中有双向链表的实现LinkedList
  */
 public class SingleLinkedList<E> {
 
@@ -79,7 +78,7 @@ public class SingleLinkedList<E> {
      * @param index
      * @param e
      */
-    public void addBefore(E index, E e) {
+    public void addAfter(E index, E e) {
         Node<E> temp = first;
         boolean flag = false;
         //遍历获取指定节点
