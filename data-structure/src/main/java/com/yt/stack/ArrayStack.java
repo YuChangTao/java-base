@@ -4,6 +4,8 @@ import java.util.EmptyStackException;
 
 /**
  * 自定义栈，使用数组完成
+ *
+ * jdk中有栈的实现Stack类，基于Vector数组实现，使用 synchronized锁比较重量级
  */
 public class ArrayStack<E> {
 

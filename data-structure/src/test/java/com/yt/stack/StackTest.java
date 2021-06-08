@@ -2,6 +2,8 @@ package com.yt.stack;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class StackTest {
@@ -52,5 +54,47 @@ public class StackTest {
             }
         }
 
+    }
+
+    /**
+     * 使用栈完成计算器
+     */
+    @Test
+    public void testCalculator() {
+        String expression = "12+3-3*2";
+
+        //创建两个栈，数栈、操作符栈
+        ArrayStack<Integer> numStack = new ArrayStack<>(10);
+        ArrayStack<Integer> operaStack = new ArrayStack<>(10);
+
+        //定义需要操作的相关变量
+        int index = 0;
+        int num1 = 0;
+        int num2 = 0;
+        int res = 0;
+        String ch = "";
+        String regex = "(?<=op)|(?=op)".replace("op", "[-+*/()]");
+        String[] calElement = expression.split(regex);
+        while (true) {
+            String element = calElement[index];
+            if (Calculator.isOpera(element)) {  //如果是运算符
+
+            }
+        }
+    }
+
+    @Test
+    public void testItr () {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        Iterator<Integer> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+            iterator.remove();
+        }
     }
 }
