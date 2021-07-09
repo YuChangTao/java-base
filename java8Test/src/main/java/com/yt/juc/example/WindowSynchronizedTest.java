@@ -120,7 +120,7 @@ public class WindowSynchronizedTest {
 
         }
         /**
-         * 等同于synchronized (this){}
+         * 等同于synchronized (Window2.class){}
          */
         private static synchronized void show(){//同步监视器：Window2.class
             if (ticket > 0) {
